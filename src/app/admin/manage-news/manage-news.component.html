@@ -1,0 +1,84 @@
+<div class="ui-g">
+    <div class="ui-g-6 ui-sm-12">
+        <mat-card>
+            <mat-spinner *ngIf="isLoading"></mat-spinner>
+
+            <mat-card-title *ngIf="mode == 'create'">
+                Create News Post
+            </mat-card-title>
+
+            <mat-card-title *ngIf="mode == 'edit'">
+                Edit News Post
+            </mat-card-title>
+
+            <form #newsForm="ngForm" *ngIf="!isLoading">
+
+                <mat-form-field>
+                    <mat-label>News Title</mat-label>
+                    <input matInput type="text" name="title" [ngModel]="news?.title" required #title="ngModel">
+                    <mat-error *ngIf="title.invalid">Enter Valid Title</mat-error>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Body of News Article</mat-label>
+                    <textarea matInput rows="6" name="content" [ngModel]="news?.content" required
+                        #content="ngModel"></textarea>
+                    <mat-error *ngIf="content.invalid">Enter Valid Content</mat-error>
+
+                </mat-form-field>
+
+                <button *ngIf="mode == 'edit'" mat-raised-button color="accent" (click)="onSaveNews(newsForm)">Update
+                    News Article
+                </button>
+
+                <button *ngIf="mode == 'create'" mat-raised-button color="primary" (click)="onSaveNews(newsForm)">Save
+                    News Article
+                </button>
+
+                <button *ngIf="mode == 'edit'" mat-raised-button color="warn" (click)="onDeleteNews(newsForm)">Delete
+                    News Article
+                </button>
+
+                <button *ngIf="mode == 'edit'" mat-raised-button color="primary" (click)="onCreateNewsPrep(newsForm)">New
+                    News Article
+                </button>
+
+            </form>
+
+        </mat-card>
+    </div>
+
+    <div class="ui-g-6 ui-sm-12">
+        <mat-card>
+            <mat-card-title>
+                Lab News
+            </mat-card-title>
+
+            <mat-accordion multi="false">
+
+                <mat-expansion-panel *ngFor="let newsPost of newsList">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            {{ newsPost.title }}
+                        </mat-panel-title>
+
+                        <!-- <mat-panel-description>
+                            {{ newsPost.postedDate }}
+                        </mat-panel-description> -->
+                    </mat-expansion-panel-header>
+                    <h3>Posted: {{ newsPost.postedDate }}</h3>
+                    
+                    <p>
+                        {{ newsPost.content }}
+                    </p>
+                    <a mat-button color="primary" (click)="loadNewsForEdit(newsPost.id)">Edit Post</a>
+                </mat-expansion-panel>
+
+            </mat-accordion>
+
+        </mat-card>
+    </div>
+</div>
+
+
+<!-- Mat-Card for the rendering the list of news articles -->

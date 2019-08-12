@@ -1,0 +1,38 @@
+<div class="ui-g" style="padding-top: 50px;">
+  <div class="ui-g-6 centered">
+    <mat-card>
+      <mat-card-title>
+        Kiosk Unit Login
+      </mat-card-title>
+
+      <mat-card-subtitle>
+        Swipe your University of Arkansas ID to login!
+      </mat-card-subtitle>
+
+      <mat-card-content>
+          <form (submit)="onSubmitID()" #loginForm="ngForm" *ngIf="!isLoading">
+              <mat-form-field>
+                  <input matInput type="search" placeholder="Student ID" name="formId" ngModel #idInput="ngModel"
+                      required email>
+                  <mat-error *ngIf="idInput.invalid">Please Enter Valid Student ID</mat-error>
+              </mat-form-field>
+
+              <!-- <mat-form-field>
+                  <input type="password" name="password" ngModel matInput placeholder="Password"
+                      #passwordInput="ngModel" required password>
+                  <mat-error *ngIf="passwordInput.invalid">Enter valid password!</mat-error>
+              </mat-form-field> -->
+
+              <mat-card-actions>
+                  <button mat-raised-button type="submit" *ngIf="!isLoading">Login</button>
+              </mat-card-actions>
+
+          </form>
+      </mat-card-content>
+
+      
+
+
+    </mat-card>
+  </div>
+</div>

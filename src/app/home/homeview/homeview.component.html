@@ -1,0 +1,64 @@
+<h1 *ngIf="userLevel == 'admin'" style="text-align: center">Admin Home Component Render</h1>
+<h1 *ngIf="userLevel == 'staff'" style="text-align: center">Staff Home component</h1>
+<h1 *ngIf="userLevel == 'student'" style="text-align: center">Student Home Component</h1>
+<h1 *ngIf="userLevel == 'default'" style="text-align: center">Non Auth Home</h1>
+
+<div class="ui-fluid" style="margin-top: 100px;">
+  <div class="ui-g" style="border: 1px solid red">
+    <div class="ui-g-12">
+      <div class="ui-g-8 ui-sm-12">
+          <mat-card>
+              <!-- <mat-spinner></mat-spinner> -->
+              <mat-card-title>
+                  Quick Stats
+              </mat-card-title>
+
+              <ul>
+                  <li>Current Woodshop status</li>
+                  <li>Current A-D Laser Status</li>
+                  <li>3D Printer Queue</li>
+              </ul>
+
+          </mat-card>
+      </div>
+      <div class="ui-g-4 ui-sm-12">
+          <mat-card *ngIf="this.user != null">
+              <mat-card-title>
+                  Current User
+              </mat-card-title>
+
+              <!-- <mat-spinner></mat-spinner> -->
+              <ul>
+                  <li><em>Name: {{ this.user.firstname }} {{ this.user.lastname }}</em></li>
+                  <li><em>Student ID: {{ this.user.studentID }}</em></li>
+                  <li><em>Level: {{ this.user.userLevel }}</em></li>
+                  <hr>
+                  <li>TODO show operating hours, or get it to work with fullcalendar</li>
+                  <li>Wood Shop X:X</li>
+              </ul>
+
+
+          </mat-card>
+
+          <mat-card *ngIf="this.user == null">
+              <mat-card-title>
+                  Beta - Guest User
+              </mat-card-title>
+
+              In order to have more functionality you must login to your Fay Jones Lab Request System Account. If you do not have an account yet, send an email to ejmason@uark.edu and I will get you setup!
+
+          </mat-card>
+      </div>
+
+      <div class="ui-g-12">
+        <h1>Show News Component Here</h1>
+      </div>
+
+
+    </div>
+
+
+
+  </div>
+
+</div>
