@@ -1,5 +1,5 @@
-const EmailHistory = require("../models/emailHistory");
-const EmailAccount = require("../models/email");
+// const EmailHistory = require("../models/emailHistory");
+// const EmailAccount = require("../models/email");
 
 const nodemailer = require("nodemailer"); // for sendEmailFromAlertAdminAccount()
 

@@ -13,8 +13,8 @@ path '' -- localhost:3000/
 */
 const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full'},
-    // { path: 'home', loadChildren: './home/home.module#HomeModule'},
-    // { path: 'auth', loadChildren: './auth/auth.module#AuthModule' },
+    { path: 'home', loadChildren: './home/home.module#HomeModule'},
+    { path: 'auth', loadChildren: './auth/auth.module#AuthModule' }
     // { path: 'admin', canActivate: [AuthGuard], loadChildren: './admin/admin.module#AdminModule'},
     // { path: 'employee', canActivate: [AuthGuard], loadChildren: './employee/employee.module#EmployeeModule'},
     // { path: 'student', canActivate: [AuthGuard], loadChildren: './student/student.module#StudentModule'}

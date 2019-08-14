@@ -25,7 +25,7 @@ import { NewDeptInfoDialogComponent } from '../shared-components/new-dept-info-d
 
 // For time input
 import {CalendarModule} from 'primeng/calendar';
-import { EnforceSaneTimeDirective } from '../directives/enforceSaneTime.directive';
+// import { EnforceSaneTimeDirective } from '../directives/enforceSaneTime.directive';
 
 import {AccordionModule} from 'primeng/accordion';
 
@@ -41,8 +41,7 @@ import {AccordionModule} from 'primeng/accordion';
     NewDeptInfoDialogComponent,
     NewemailaccountComponent,
     EmailhistorytableComponent,
-    ManageDeptsComponent,
-    EnforceSaneTimeDirective
+    ManageDeptsComponent
   ],
   imports: [
     CommonModule,

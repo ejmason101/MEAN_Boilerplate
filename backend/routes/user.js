@@ -7,8 +7,6 @@ const checkAuth = require("../middleware/check-auth");
 const router = express.Router();
 
 const User = require("../models/user");
-const ResetPassword = require("../models/resetPassword");
-
 
 const helpers = require("../utils/helpers");
 

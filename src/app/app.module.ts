@@ -16,7 +16,7 @@ import { ErrorComponent } from './error/error.component';
 import { ErrorInterceptor } from './error-interceptor';
 import { AuthInterceptor } from './auth/auth-interceptor';
 import { AppRoutingModule } from './app-routing.module';
-import { MachinePrinterComponent } from './machine-printer/machine-printer.component';
+// import { MachinePrinterComponent } from './machine-printer/machine-printer.component';
 import { AuthService } from './auth/auth.service';
 import { AdminModule } from './admin/admin.module';
 import { AgGridModule } from 'ag-grid-angular';
@@ -28,9 +28,7 @@ import { FullCalendarModule } from '@fullcalendar/angular';
   declarations: [
     AppComponent,
     NavigationComponent,
-    ErrorComponent,
-    MachinePrinterComponent
-    // ConfirmationDialogComponent
+    ErrorComponent
   ],
   imports: [
     BrowserModule,

@@ -17,7 +17,7 @@ export class AdminGuard implements CanActivate, CanActivateChild{
 
             if( isAdmin != "admin") {
                 // Display Error: Must be an admin account
-                alert("You must be an admin to access the admin panel silly!");
+                // alert("You must be an admin to access the admin panel silly!");
                 this.router.navigate(['/']);
             } else {
                 return true;

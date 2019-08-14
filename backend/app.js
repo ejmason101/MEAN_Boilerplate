@@ -44,10 +44,10 @@ if(mongoURL){
     console.log('mongoURL from openshift is: ' + mongoURL);
     
     // Set reset password link to point to the okc cluster
-    process.env.resetPasswordLink = "http://fjlrs.origin.uark.edu/auth/resetpassword/";
+    process.env.resetPasswordLink = "http://REPLACEWITHPRODURL/auth/resetpassword/";
 } else {
     console.log('mongoURL was empty, setting to local development')
-    mongoURL = 'mongodb://localhost:27017/fj_printqueue'
+    mongoURL = 'mongodb://localhost:27017/MEAN_boilerplate'
 
     // Set the reset password link to point to localhost development in this case
     process.env.resetPasswordLink = "http://localhost:4200/auth/resetpassword/";
